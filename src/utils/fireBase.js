@@ -2,6 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -13,11 +14,18 @@ const firebaseConfig = {
   projectId: "test-proj-e4778",
   storageBucket: "test-proj-e4778.firebasestorage.app",
   messagingSenderId: "729968353099",
-  appId: "1:729968353099:web:b53e91e15bc759a91f92ce",
-  measurementId: "G-EEYXFVJ1NS"
+  appId: "1:729968353099:web:955faf207a5cb9bf1f92ce",
+  measurementId: "G-Z7TYJ9VX9E",
+  "hosting": {
+    "site": "netflix-proj-e4778-50bc2",
+
+    "public": "public",
+  }
 };
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 export  const auth=getAuth()
+

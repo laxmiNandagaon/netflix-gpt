@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
+import { BACKGROUND_IMG } from '../utils/constants';
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -36,7 +37,7 @@ const Login = () => {
                           displayName:displayName,
                           email:email})
                         );
-                navigate('/browse');
+                
             }).catch((error) => {
               setErrorMessage(error.message);
             });
@@ -51,7 +52,7 @@ const Login = () => {
           .then((userCredential) => {
             const user = userCredential.user;
             console.log(user);
-            navigate('/browse');
+           
           })
           .catch((error) => {
             const errorMessage = error.message;
@@ -89,7 +90,7 @@ const Login = () => {
         </p>
       </form>
       <div className="absolute top-0 left-0 w-full h-full object-cover">
-        <img src="https://assets.nflxext.com/ffe/siteui/vlv3/2f5a878d-bbce-451b-836a-398227a34fbf/web/IN-en-20241230-TRIFECTA-perspective_5ab944a5-1a71-4f6d-b341-8699d0491edd_large.jpg" alt="Netflix bg img" />
+        <img src={BACKGROUND_IMG} alt="Netflix bg img" />
       </div>
     </div>
   );
